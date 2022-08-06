@@ -1,7 +1,13 @@
 <?php
 /**
- * Plugin Name: WP Data Summary
- *
+ * Plugin Name:       WP Data Summary
+ * Description:       Small plugin that displays a summary of your post types and taxonomies.
+ * Version:           1.0.0
+ * Author:            Solid Digital
+ * Author URI:        https://www.soliddigital.com
+ * License:           GPLv2
+ * Text Domain:       wp-data-summary
+ * Domain Path:       /languages
  */
 
 namespace wp_data_summary;
@@ -14,7 +20,7 @@ function admin_menu() {
 
 function admin_page() {
     ?>
-    <h1>WP Data Summary</h1>
+    <h1><?php _e('WP Data Summary', 'wp-data-summary') ?></h1>
     <?php
 
     the_post_types_table();
@@ -41,15 +47,15 @@ function the_post_types_table() {
         return $a['publish'] > $b['publish'] ? -1 : 1;
     });
     ?>
-    <h2>Post Types</h2>
+    <h2><?php _e('Post Types', 'wp-data-summary') ?></h2>
 
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Label</th>
-                <th>Publish</th>
-                <th>Draft</th>
+                <th><?php _e('Name', 'wp-data-summary') ?></th>
+                <th><?php _e('Label', 'wp-data-summary') ?></th>
+                <th><?php _e('Publish', 'wp-data-summary') ?></th>
+                <th><?php _e('Draft', 'wp-data-summary') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -87,14 +93,14 @@ function the_taxonomies_table() {
         return $a['count'] > $b['count'] ? -1 : 1;
     });
     ?>
-    <h2>Taxonomies</h2>
+    <h2><?php _e('Taxonomies', 'wp-data-summary') ?></h2>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Label</th>
-                <th>Object Type</th>
-                <th>Count</th>
+                <th><?php _e('Name', 'wp-data-summary') ?></th>
+                <th><?php _e('Label', 'wp-data-summary') ?></th>
+                <th><?php _e('Object Type', 'wp-data-summary') ?></th>
+                <th><?php _e('Count', 'wp-data-summary') ?></th>
             </tr>
         </thead>
         <tbody>
