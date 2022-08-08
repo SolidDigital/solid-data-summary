@@ -61,10 +61,10 @@ function the_post_types_table() {
         <tbody>
             <?php foreach($post_types as $post_type): ?>
                 <tr>
-                    <td><?php echo $post_type['name']; ?></td>
-                    <td><?php echo $post_type['label']; ?></td>
-                    <td><?php echo $post_type['publish']; ?></td>
-                    <td><?php echo $post_type['draft']; ?></td>
+                    <td><?php echo esc_html($post_type['name']); ?></td>
+                    <td><?php echo esc_html($post_type['label']); ?></td>
+                    <td><?php echo esc_html($post_type['publish']); ?></td>
+                    <td><?php echo esc_html($post_type['draft']); ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -106,10 +106,10 @@ function the_taxonomies_table() {
         <tbody>
             <?php foreach($taxonomies as $taxonomy): ?>
                 <tr>
-                    <td><?php echo $taxonomy['name']; ?></td>
-                    <td><?php echo $taxonomy['label']; ?></td>
-                    <td><?php echo join(', ', $taxonomy['object_type']); ?></td>
-                    <td><?php echo $taxonomy['count']; ?></td>
+                    <td><?php echo esc_html($taxonomy['name']); ?></td>
+                    <td><?php echo esc_html($taxonomy['label']); ?></td>
+                    <td><?php echo esc_html(join(', ', $taxonomy['object_type'])); ?></td>
+                    <td><?php echo esc_html($taxonomy['count']); ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
